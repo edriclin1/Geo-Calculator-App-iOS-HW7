@@ -28,26 +28,30 @@ class HistoryTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return entries.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        
+        let loc = entries[indexPath.row]
+        
+        // round coordinates to 4 decimal places
+        let p1Lat: Double = (loc.origLat * 10000).rounded() / 10000
+        let p1Long: Double = (loc.origLng * 10000).rounded() / 10000
+        let p2Lat: Double = (loc.destLat * 10000).rounded() / 10000
+        let p2Long: Double = (loc.destLng * 10000).rounded() / 10000
+        
+        cell.textLabel?.text = "(\(p1Lat), \(p1Long)) (\(p2Lat), \(p2Long))"
+        cell.detailTextLabel?.text = "\(loc.timestamp)"
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

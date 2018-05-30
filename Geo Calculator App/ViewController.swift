@@ -39,23 +39,23 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
             #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(detectTouch)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-/*    // protocol from settings view
-    func applyDistanceUnitsSelection(distanceUnits: String) {
-        self.distanceUnits = distanceUnits
-        calculateButton.sendActions(for: .touchUpInside)
-    }
     
-    // protocol from settings view
-    func applyBearingUnitsSelection(bearingUnits: String) {
-        self.bearingUnits = bearingUnits
-        calculateButton.sendActions(for: .touchUpInside)
-    } */
+    /*    // protocol from settings view
+     func applyDistanceUnitsSelection(distanceUnits: String) {
+     self.distanceUnits = distanceUnits
+     calculateButton.sendActions(for: .touchUpInside)
+     }
+     
+     // protocol from settings view
+     func applyBearingUnitsSelection(bearingUnits: String) {
+     self.bearingUnits = bearingUnits
+     calculateButton.sendActions(for: .touchUpInside)
+     } */
     
     // protocol from settings view
     func settingsChanged(distanceUnits: String, bearingUnits: String) {
@@ -66,23 +66,28 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let navVC = segue.destination as? UINavigationController {
-            
-            // if segue to settings view controller
-            if let settingsVC = navVC.viewControllers.first as? SettingsViewController {
+        //print(segue.identifier!)
+        
+        // if segue to settings view controller
+        if segue.identifier == "settingsSegue" {
+            if let settingsVC = segue.destination as? SettingsViewController {
                 settingsVC.delegate = self
                 settingsVC.distanceUnits = self.distanceUnits
                 settingsVC.bearingUnits = self.bearingUnits
-            }
-            
-            // if seugue to history table view controller
-            if let settingsVC = navVC.viewControllers.first as? HistoryTableViewController {
-                settingsVC.delegate = self
-                settingsVC.distanceUnits = self.distanceUnits
-                settingsVC.bearingUnits = self.bearingUnits
+                //print("hello")
             }
         }
-
+        
+        // if seugue to history table view controller
+        if segue.identifier == "historySegue" {
+            if let historyTableVC = segue.destination as? HistoryTableViewController  {
+                entries.forEach { entry in
+                    historyTableVC.entries.append(entry)
+                }
+            }
+        }
+        
+        
     }
     
     @objc func dismissKeyboard() {

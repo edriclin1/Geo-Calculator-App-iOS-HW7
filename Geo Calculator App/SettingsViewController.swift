@@ -120,8 +120,7 @@ class SettingsViewController: UIViewController {
     */
 
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-        
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
@@ -130,7 +129,7 @@ class SettingsViewController: UIViewController {
             //d.applyBearingUnitsSelection(bearingUnits: bearingUnitsLabel.text!)
             d.settingsChanged(distanceUnits: distanceUnitsLabel.text!, bearingUnits: bearingUnitsLabel.text!)
         }
-        self.dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }
 
