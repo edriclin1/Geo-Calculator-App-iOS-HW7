@@ -11,7 +11,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, SettingsViewControllerDelegate {
+class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryTableViewControllerDelagate {
     
     @IBOutlet weak var p1LatField: DecimalMinusTextField!
     @IBOutlet weak var p2LatField: DecimalMinusTextField!
@@ -69,6 +69,16 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
         calculateButton.sendActions(for: .touchUpInside)
     }
     
+    // protocol from history view
+    func selectEntry(entry: LocationLookup) {
+        self.p1LatField.text = "\(entry.origLat)"
+        self.p1LongField.text = "\(entry.origLng)"
+        self.p2LatField.text = "\(entry.destLat)"
+        self.p2LongField.text = "\(entry.destLng)"
+        
+        calculateButton.sendActions(for: .touchUpInside)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //print(segue.identifier!)
@@ -89,10 +99,9 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
                 entries.forEach { entry in
                     historyTableVC.entries.append(entry)
                 }
+                historyTableVC.historyDelegate = self
             }
         }
-        
-        
     }
     
     @objc func dismissKeyboard() {
