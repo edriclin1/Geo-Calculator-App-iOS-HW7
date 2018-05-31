@@ -231,10 +231,10 @@
             </objects>
             <point key="canvasLocation" x="1988" y="-501"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--History-->
         <scene sceneID="irG-yu-fGW">
             <objects>
-                <tableViewController id="4Yp-uv-oNY" customClass="HistoryTableViewController" customModule="Geo_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="History" id="4Yp-uv-oNY" customClass="HistoryTableViewController" customModule="Geo_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7xN-dF-80k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,22 +289,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTQ-yp-LGf">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTQ-yp-LGf">
                                             <rect key="frame" x="16" y="60" width="343" height="79.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS7-81-vqc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS7-81-vqc">
                                                     <rect key="frame" x="141" y="0.0" width="61.5" height="29"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg1-fV-5Kj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg1-fV-5Kj">
                                                     <rect key="frame" x="141" y="29" width="61.5" height="29"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yJ-8J-mRN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yJ-8J-mRN">
                                                     <rect key="frame" x="149.5" y="58" width="44" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -324,12 +324,13 @@
                                         <constraint firstAttribute="trailing" secondItem="Ux3-zv-on2" secondAttribute="trailing" id="cFt-y8-FRG"/>
                                         <constraint firstItem="sTQ-yp-LGf" firstAttribute="leading" secondItem="ngo-FP-DAa" secondAttribute="leadingMargin" id="fdr-yR-SWK"/>
                                         <constraint firstItem="8vd-ub-EX3" firstAttribute="leading" secondItem="ngo-FP-DAa" secondAttribute="leading" id="hoz-G5-d6f"/>
+                                        <constraint firstItem="sTQ-yp-LGf" firstAttribute="centerY" secondItem="Ux3-zv-on2" secondAttribute="centerY" id="jz3-Pk-A17"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="destPoint" destination="gg1-fV-5Kj" id="7d0-wK-JlF"/>
                                     <outlet property="origPoint" destination="SS7-81-vqc" id="eCg-oE-koV"/>
-                                    <outlet property="timeStamp" destination="6yJ-8J-mRN" id="Uuh-ha-mGO"/>
+                                    <outlet property="timestamp" destination="6yJ-8J-mRN" id="1oj-yA-lbC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -341,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwf-Yz-UMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="189"/>
+            <point key="canvasLocation" x="1297" y="223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iM0-4s-aaz">

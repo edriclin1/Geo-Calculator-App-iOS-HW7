@@ -63,6 +63,7 @@ class HistoryTableViewController: UITableViewController {
         return cell
     }
     
+    
     var tableViewData: [(sectionHeader: String, entries: [LocationLookup])]? {
         didSet {
             DispatchQueue.main.async {
@@ -81,8 +82,10 @@ class HistoryTableViewController: UITableViewController {
             let shortDate = entry.timestamp.short
             if var bucket = tmpEntries[shortDate] {
                 bucket.append(entry)
-                tmpEntries[shortDate] = bucket } else {
-                tmpEntries[shortDate] = [entry] }
+                tmpEntries[shortDate] = bucket }
+            else {
+                tmpEntries[shortDate] = [entry]
+            }
         }
         
         // breakout into our preferred array format
@@ -113,10 +116,16 @@ class HistoryTableViewController: UITableViewController {
             return 200.0
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = BACKGROUND_COLOR
+        header.contentView.backgroundColor = FOREGROUND_COLOR
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = FOREGROUND_COLOR
-        header.contentView.backgroundColor = BACKGROUND_COLOR
+        header.textLabel?.textColor = BACKGROUND_COLOR
+        header.contentView.backgroundColor = FOREGROUND_COLOR
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
