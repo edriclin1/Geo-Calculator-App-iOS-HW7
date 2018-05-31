@@ -21,6 +21,7 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sortIntoSections(entries: self.entries)
+        self.navigationController!.navigationBar.topItem!.title = "GeoCalculator"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

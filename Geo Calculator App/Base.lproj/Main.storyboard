@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--GeoCalculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Geo_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="GeoCalculator" id="BYZ-38-t0r" customClass="ViewController" customModule="Geo_Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2IF-zW-vpx"/>
                         <viewControllerLayoutGuide type="bottom" id="9ga-XI-qcI"/>
@@ -115,7 +115,7 @@
                             <constraint firstItem="yZZ-OM-b0P" firstAttribute="top" secondItem="q31-0g-86C" secondAttribute="bottom" constant="8" symbolic="YES" id="v6H-qz-u5J"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vbO-1t-Pav">
+                    <navigationItem key="navigationItem" title="GeoCalculator" id="vbO-1t-Pav">
                         <barButtonItem key="leftBarButtonItem" title="History" id="BnD-Hm-o2a">
                             <connections>
                                 <segue destination="4Yp-uv-oNY" kind="show" identifier="historySegue" id="3EP-oZ-Xb9"/>
